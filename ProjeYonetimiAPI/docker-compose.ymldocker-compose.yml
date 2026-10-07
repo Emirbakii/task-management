@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5151:8080" # Konteyner içindeki 8080 portunu bilgisayarının 5151 portuna bağlar
+    volumes:
+      # SQLite veritabanı dosyasını kalıcı hale getirmek için dışarıya map ediyoruz
+      - ./projeyonetimi.db:/app/projeyonetimi.db 
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development

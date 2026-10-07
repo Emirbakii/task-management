@@ -1,0 +1,19 @@
+@ProjeYonetimiAPI_HostAddress = http://localhost:5151
+
+GET {{ProjeYonetimiAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+
+### Yeni Kullanıcı Kaydetme Testi
+POST {{ProjeYonetimiAPI_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+  "firstName": "Emir",
+  "lastName": "Çolak",
+  "email": "emir@test.com",
+  "passwordHash": "GuvenliSifre123!",
+  "role": "Admin"
+}
